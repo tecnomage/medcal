@@ -1,3 +1,4 @@
+package br.com.medclin.boot.daos;
 //package br.com.medclin.daos;
 //
 //import java.util.List;

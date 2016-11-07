@@ -2,7 +2,7 @@ package br.com.medclin.builders;
 
 import java.util.Calendar;
 
-import br.com.medclin.models.Paciente;
+import br.com.medclin.boot.models.Paciente;
 
 public class CriadorDePacientes {
 	

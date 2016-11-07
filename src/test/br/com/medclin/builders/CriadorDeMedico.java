@@ -1,6 +1,6 @@
 package br.com.medclin.builders;
 
-import br.com.medclin.models.Medico;
+import br.com.medclin.boot.models.Medico;
 
 public class CriadorDeMedico {
 

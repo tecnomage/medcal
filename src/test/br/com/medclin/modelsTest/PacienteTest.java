@@ -7,8 +7,8 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
+import br.com.medclin.boot.models.Paciente;
 import br.com.medclin.builders.CriadorDePacientes;
-import br.com.medclin.models.Paciente;
 
 
 public class PacienteTest {

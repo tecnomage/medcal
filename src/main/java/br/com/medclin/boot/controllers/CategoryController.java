@@ -1,3 +1,4 @@
+package br.com.medclin.boot.controllers;
 //package br.com.medclin.controllers;
 //
 //import javax.transaction.Transactional;

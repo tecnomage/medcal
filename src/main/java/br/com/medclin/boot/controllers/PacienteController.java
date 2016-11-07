@@ -1,4 +1,4 @@
-package br.com.medclin.controllers;
+package br.com.medclin.boot.controllers;
 
 import org.springframework.stereotype.Controller;
 

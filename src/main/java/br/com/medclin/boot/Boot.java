@@ -1,4 +1,4 @@
-package br.com.medclin;
+package br.com.medclin.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

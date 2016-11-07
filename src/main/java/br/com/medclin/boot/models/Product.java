@@ -1,3 +1,4 @@
+package br.com.medclin.boot.models;
 //package br.com.medclin.models;
 //
 //import javax.persistence.Entity;
@@ -6,8 +7,10 @@
 //import javax.persistence.Id;
 //import javax.persistence.ManyToOne;
 //
+//import java.math.BigDecimal;
+//
 //@Entity
-//public class Category
+//public class Product
 //{
 //
 //   @Id
@@ -15,6 +18,9 @@
 //   private Integer id;
 //   private String name;
 //   private String description;
+//   private BigDecimal price;
+//   @ManyToOne
+//   private Category category;
 //
 //   public Integer getId()
 //   {
@@ -44,5 +50,25 @@
 //   public void setDescription(String description)
 //   {
 //      this.description = description;
+//   }
+//
+//   public BigDecimal getPrice()
+//   {
+//      return this.price;
+//   }
+//
+//   public void setPrice(BigDecimal price)
+//   {
+//      this.price = price;
+//   }
+//
+//   public Category getCategory()
+//   {
+//      return this.category;
+//   }
+//
+//   public void setCategory(Category category)
+//   {
+//      this.category = category;
 //   }
 //}

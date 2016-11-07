@@ -2,8 +2,8 @@ package br.com.medclin.modelsTest;
 
 import org.junit.Test;
 
+import br.com.medclin.boot.models.Medico;
 import br.com.medclin.builders.CriadorDeMedico;
-import br.com.medclin.models.Medico;
 
 public class medicoTest {
 	

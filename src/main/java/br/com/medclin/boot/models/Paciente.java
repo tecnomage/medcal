@@ -1,4 +1,4 @@
-package br.com.medclin.models;
+package br.com.medclin.boot.models;
 
 import java.util.Calendar;
 
