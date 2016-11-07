@@ -3,16 +3,23 @@ package br.com.medclin.models;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
 public class Paciente {
 	
-	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
 	private Calendar DataNascimento;
 	private String Endereco;
-    private String Cpf;
+    
+	@NotNull
+	private String Cpf;
     private String PlanoDeSaude;
     
     
