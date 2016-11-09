@@ -15,11 +15,11 @@ public class Paciente {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private Calendar DataNascimento;
-	private String Endereco;
+	private Calendar dataNascimento;
+	private String endereco;
     
 	@NotNull
-	private String Cpf;
+	private String cpf;
     private String PlanoDeSaude;
     
     
@@ -27,10 +27,10 @@ public class Paciente {
     public Paciente(String nome, Calendar dataNascimento, String endereco, String cpf, String planoDeSaude) {
 		super();
 		this.nome = nome;
-		DataNascimento = dataNascimento;
-		Endereco = endereco;
-		Cpf = cpf;
-		PlanoDeSaude = planoDeSaude;
+		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
+		this.cpf = cpf;
+		this.PlanoDeSaude = planoDeSaude;
 	}
 
 
@@ -38,9 +38,9 @@ public class Paciente {
 	public Paciente(String nome, Calendar dataNascimento, String endereco, String cpf) {
 		super();
 		this.nome = nome;
-		DataNascimento = dataNascimento;
-		Endereco = endereco;
-		Cpf = cpf;
+		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
+		this.cpf = cpf;
 	}
 
 
@@ -58,37 +58,37 @@ public class Paciente {
 
 
 	public Calendar getDataNascimento() {
-		return DataNascimento;
+		return dataNascimento;
 	}
 
 
 
 	public void setDataNascimento(Calendar dataNascimento) {
-		DataNascimento = dataNascimento;
+		dataNascimento = dataNascimento;
 	}
 
 
 
 	public String getEndereco() {
-		return Endereco;
+		return endereco;
 	}
 
 
 
 	public void setEndereco(String endereco) {
-		Endereco = endereco;
+		endereco = endereco;
 	}
 
 
 
 	public String getCpf() {
-		return Cpf;
+		return cpf;
 	}
 
 
 
 	public void setCpf(String cpf) {
-		Cpf = cpf;
+		cpf = cpf;
 	}
 
 
@@ -101,6 +101,29 @@ public class Paciente {
 
 	public void setPlanoDeSaude(String planoDeSaude) {
 		PlanoDeSaude = planoDeSaude;
+	}
+
+
+
+	public boolean equals(Paciente pct) {
+		if (this.cpf == pct.cpf)
+			return true;
+		else return false;
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+
+
+	@Override
+	public String toString() {
+		return getCpf() + getNome();
 	}
 
 }

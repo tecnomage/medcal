@@ -38,6 +38,11 @@ public class CriadorDePacientes {
 		this.pct = new Paciente(nome, DataNascimento, endereco, cpf);
 		return pct;
 	}
+
+	@Override
+	public String toString() {
+			return this.pct.toString();
+	}
 	
     
     

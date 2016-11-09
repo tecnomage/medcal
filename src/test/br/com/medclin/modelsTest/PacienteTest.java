@@ -28,13 +28,25 @@ public class PacienteTest {
 		
 			//Paciente pct = new Paciente("teste", Calendar.getInstance(), null , "80862730244");
 			Paciente pct = new CriadorDePacientes().nome("vincius").cpf("80807747474").nascimento(Calendar.getInstance())
-					.endereco().constroi();;
+					.endereco().constroi();
 		
 	}
 	
+	@Test
+	public void deveRetornarNomeEcpf(){
+		 CriadorDePacientes criadorDePacientes = new CriadorDePacientes();
+		
+		 criadorDePacientes.nome("vincius").cpf("80807747474").nascimento(Calendar.getInstance())
+		.endereco("rua mass effect").constroi();
+
+		 assertEquals("80807747474"+"vincius" , criadorDePacientes.toString());
+		 
+	}
 	
-	
-	
+	@Test
+	public void deveComparar2objetos(){
+				
+	}
 	
 	
 	

@@ -1,5 +1,6 @@
 package br.com.medclin.boot.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,6 +8,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+
+@Entity
 public class Medico {
 	
 	
@@ -76,6 +79,27 @@ public class Medico {
 
 	public void setEndereco(String endereco) {
 		Endereco = endereco;
+	}
+
+	public boolean equals(Medico med) {
+		if (this.crm == med.crm)
+			return true;
+		else return false;
+		
+	}
+
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+
+	@Override
+	public String toString() {
+		
+		return getCrm() + getNome();
 	}
 	
 	
