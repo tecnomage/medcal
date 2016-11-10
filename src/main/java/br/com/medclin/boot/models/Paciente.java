@@ -45,6 +45,12 @@ public class Paciente {
 
 
 
+	public Paciente(String pctCpf) {
+		this.cpf = pctCpf;
+	}
+
+
+
 	public String getNome() {
 		return nome;
 	}

@@ -9,27 +9,27 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Consulta {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
+
 	@ManyToOne
 	private Medico medico;
-	
-	
+
 	private Paciente pct;
-	
+
 	private Receita receita;
-	
-	Restrito restrito;	
+
+	Restrito restrito;
+
 	public enum Restrito {
 		SIM, NAO
 	}
-	
-	
-	public Consulta(String crm, String pctCpf) {
-		this.medico = new Medico(nome, this.crm)
+
+	public Consulta(Medico med, Paciente paciente) {
+		this.medico = med;
+		this.pct = paciente;
 	}
 
 	public Integer getId() {
@@ -48,9 +48,7 @@ public class Consulta {
 		this.pct = pct;
 	}
 
-		
-	
-	public Medico getMedico() {
+	public Medico getMedico() { 
 		return medico;
 	}
 
@@ -76,8 +74,8 @@ public class Consulta {
 
 	@Override
 	public String toString() {
-	
-		return getPct() + getMedico() + getReceita(); 
+
+		return getPct() + medico.toString() + getReceita();
 	}
 
 }
