@@ -1,9 +1,14 @@
 package br.com.medclin.boot.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -17,17 +22,23 @@ public class Consulta {
 	@ManyToOne
 	private Medico medico;
 
-	private Paciente pct;
+	// TODO
+	// Could not determine type for: br.com.medclin.boot.models.Paciente, at
+	// table: consulta, for columns:
+	// [org.hibernate.mapping.Column(pct)]
+	// corrigir esse erro
+	//
+	// list ou classe?
 
-	private Receita receita;
+	@ManyToMany
+	@JoinTable(name = "CONSULTA_PACIENTES")
+	private List<Paciente> pct = new ArrayList<>();
 
-	Restrito restrito;
+	@ManyToMany
+	@JoinTable(name = "CONSULTA_RECEITA")
+	private List<Receita> receita = new ArrayList<>();
 
-	public enum Restrito {
-		SIM, NAO
-	}
-
-	public Consulta(Medico med, Paciente paciente) {
+	public Consulta(Medico med, List<Paciente> paciente) {
 		this.medico = med;
 		this.pct = paciente;
 	}
@@ -40,15 +51,15 @@ public class Consulta {
 		this.id = id;
 	}
 
-	public Paciente getPct() {
+	public List<Paciente> getPct() {
 		return pct;
 	}
 
-	public void setPct(Paciente pct) {
+	public void setPct(List<Paciente> pct) {
 		this.pct = pct;
 	}
 
-	public Medico getMedico() { 
+	public Medico getMedico() {
 		return medico;
 	}
 
@@ -56,26 +67,21 @@ public class Consulta {
 		this.medico = medico;
 	}
 
-	public Receita getReceita() {
+	public List<Receita> getReceita() {
 		return receita;
 	}
 
-	public void setReceita(Receita receita) {
+	public void setReceita(List<Receita> receita) {
 		this.receita = receita;
 	}
 
-	public Restrito getRestrito() {
-		return restrito;
-	}
-
-	public void setRestrito(Restrito restrito) {
-		this.restrito = restrito;
-	}
-
+	// FIXME this return
+	//this class can have a lot of pacients, how can i get the one a want
+	//or a just change this toString?
 	@Override
 	public String toString() {
 
-		return getPct() + medico.toString() + getReceita();
+		return this.pct + this.medico.getCrm();
 	}
 
 }

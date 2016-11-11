@@ -9,6 +9,9 @@ import br.com.medclin.builders.ConsultaBuilder;
 
 public class ConsultaTest {
 	
+	//TODO modificar o teste para comportar Paciente como lista na classe consulta
+	
+	
 	@Test(expected = Error.class)
 	public void TodaConsultaDeveTerMedicoEpaciente(){
 		
@@ -21,5 +24,17 @@ public class ConsultaTest {
 	}
 	
 //TODO testar o toString
+	@Test
+	public void TestaTostring(){
+		Consulta consulta = new ConsultaBuilder().medico("123", "fulano").paciente("pct", "808").constroi();
+		
+
+		//return this.pct.getNome() + this.medico.getCrm();
+		assertEquals("pct" + "123",consulta.toString() );
+		
+		
+	}
+	
+	
 
 }

@@ -1,5 +1,7 @@
 package br.com.medclin.builders;
 
+import java.util.Calendar;
+
 import br.com.medclin.boot.builders.GenericBuilder;
 import br.com.medclin.boot.models.Consulta;
 import br.com.medclin.boot.models.Medico;
@@ -26,15 +28,28 @@ public class ConsultaBuilder implements GenericBuilder {
 		return this;
 	}
 	
+	public ConsultaBuilder paciente(String pctnome ,String cpf) {
+		this.pctNome = pctnome;
+		this.pctCpf = cpf;
+		return this;
+		
+	}
+	
+	
 
-	//TODO finalizar o constroi
+	//TODO atualizar o método para vários construtores de pct
 	public Consulta constroi() {
 		
 		Medico medico;
 		Paciente paciente;
 		medico = new Medico(nomeMedico, crm);
-		paciente = new Paciente(pctCpf);
 		
+		
+		if (this.pctNome == null) {
+			paciente = new Paciente(pctCpf);
+		}else{
+			paciente= new Paciente(this.pctNome ,Calendar.getInstance(),"End tese" , this.pctCpf,"unmined" ); 
+		}
 		if (medico == null || paciente == null) {
 			throw new RuntimeException();
 		}
