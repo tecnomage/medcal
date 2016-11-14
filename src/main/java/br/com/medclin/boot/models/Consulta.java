@@ -22,14 +22,6 @@ public class Consulta {
 	@ManyToOne
 	private Medico medico;
 
-	// TODO
-	// Could not determine type for: br.com.medclin.boot.models.Paciente, at
-	// table: consulta, for columns:
-	// [org.hibernate.mapping.Column(pct)]
-	// corrigir esse erro
-	//
-	// list ou classe?
-
 	@ManyToMany
 	@JoinTable(name = "CONSULTA_PACIENTES")
 	private List<Paciente> pct = new ArrayList<>();
@@ -75,13 +67,16 @@ public class Consulta {
 		this.receita = receita;
 	}
 
-	// FIXME this return
-	//this class can have a lot of pacients, how can i get the one a want
-	//or a just change this toString?
+ 
 	@Override
 	public String toString() {
-
-		return this.pct + this.medico.getCrm();
+		
+		//@NOTE a view usará essa lista mostrar as consultas 
+		List<Paciente> pct = getPct();
+		
+		return pct + this.medico.getCrm();
+		
+		 
 	}
 
 }

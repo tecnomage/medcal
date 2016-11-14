@@ -9,9 +9,7 @@ import br.com.medclin.builders.ConsultaBuilder;
 
 public class ConsultaTest {
 	
-	//TODO modificar o teste para comportar Paciente como lista na classe consulta
-	
-	
+	//FIXME modificar o teste para comportar Paciente como lista na classe consulta
 	@Test(expected = Error.class)
 	public void TodaConsultaDeveTerMedicoEpaciente(){
 		
