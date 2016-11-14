@@ -53,7 +53,8 @@ public class ConsultaBuilder implements GenericBuilder {
 		if (medico == null || paciente == null) {
 			throw new RuntimeException();
 		}
-		
+
+		//TODO alterar o retorno para que seja uma listagem de pct
 		return this.consulta= new Consulta(medico,paciente);
 		
 		

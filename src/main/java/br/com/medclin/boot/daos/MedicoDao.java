@@ -2,25 +2,24 @@ package br.com.medclin.boot.daos;
 
 import java.io.Serializable;
 
-import javax.management.Query;
-
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import br.com.medclin.boot.models.Medico;
 
+@Repository
 public interface MedicoDao extends CrudRepository<Medico, Serializable>{
 
-	public default Medico findByCrm(String crm){
-		//TODO verificar se a tabela é medico msm
-//		Query query = manager.createQuery("select m from Movimentacao m where m.conta.id="
-//                + conta.getId());
-		
-		
-		
-		return Medico;
-		
-	}
-	  		
+//Exemplo da documentacao
+//	@Query("select u from User u where u.firstname = :firstname")
+//	List<User> findByFirstname(String firstname);	
+//	
+	
+	
+	
+//	Query("from Medico m where m.crm=:crm")
+public Medico findByCrm( String crm);	
 	
 	
 }
