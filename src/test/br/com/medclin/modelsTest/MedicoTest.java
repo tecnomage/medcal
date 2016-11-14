@@ -26,6 +26,5 @@ public class MedicoTest {
 	
 	
 	
-//todo medico deve ter crm	
 	
 }

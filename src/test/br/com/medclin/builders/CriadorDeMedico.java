@@ -22,13 +22,17 @@ public class CriadorDeMedico {
 	
 	
 	public Medico controi(){
-		return new Medico(nome,crm);
+		
+		if (nome == null) {
+			return new Medico(crm);
+		}
+		else return new Medico(nome, crm);
 	}
 
 	
 	@Override
 	public String toString() {
-		return ;
+		return nome + crm;
 	}
 
 

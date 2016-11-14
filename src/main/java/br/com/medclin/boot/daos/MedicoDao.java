@@ -19,7 +19,7 @@ public interface MedicoDao extends CrudRepository<Medico, Serializable>{
 	
 	
 //	Query("from Medico m where m.crm=:crm")
-public Medico findByCrm( String crm);	
+public Medico findByCrm(String crm);	
 	
 	
 }

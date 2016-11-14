@@ -26,7 +26,6 @@ public class ConsultaTest {
 	public void TestaTostring(){
 		Consulta consulta = new ConsultaBuilder().medico("123", "fulano").paciente("pct", "808").constroi();
 		
-
 		//return this.pct.getNome() + this.medico.getCrm();
 		assertEquals("pct" + "123",consulta.toString() );
 		
