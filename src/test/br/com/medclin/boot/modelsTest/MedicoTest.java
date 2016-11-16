@@ -1,4 +1,4 @@
-package br.com.medclin.modelsTest;
+package br.com.medclin.boot.modelsTest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
+import br.com.medclin.boot.builders.CriadorDeMedico;
 import br.com.medclin.boot.daos.MedicoDao;
 import br.com.medclin.boot.models.Medico;
-import br.com.medclin.builders.CriadorDeMedico;
 
 public class MedicoTest {
 	

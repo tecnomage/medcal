@@ -1,11 +1,11 @@
-package br.com.medclin.modelsTest;
+package br.com.medclin.boot.modelsTest;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+import br.com.medclin.boot.builders.ConsultaBuilder;
 import br.com.medclin.boot.models.Consulta;
 import br.com.medclin.boot.models.Medico;
-import br.com.medclin.builders.ConsultaBuilder;
 
 public class ConsultaTest {
 	

@@ -1,8 +1,7 @@
-package br.com.medclin.builders;
+package br.com.medclin.boot.builders;
 
 import java.util.Calendar;
 
-import br.com.medclin.boot.builders.GenericBuilder;
 import br.com.medclin.boot.models.Consulta;
 import br.com.medclin.boot.models.Medico;
 import br.com.medclin.boot.models.Paciente;

@@ -1,4 +1,4 @@
-package br.com.medclin.modelsTest;
+package br.com.medclin.boot.modelsTest;
 
 
 import static org.junit.Assert.assertEquals;
@@ -7,8 +7,8 @@ import java.util.Calendar;
 
 import org.junit.Test;
 
+import br.com.medclin.boot.builders.CriadorDePacientes;
 import br.com.medclin.boot.models.Paciente;
-import br.com.medclin.builders.CriadorDePacientes;
 
 
 public class PacienteTest {
