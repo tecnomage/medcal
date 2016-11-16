@@ -16,6 +16,7 @@ public class ConsultaBuilder implements GenericBuilder {
 	private String nomeMedico;
 	private String pctNome;
 	
+	//TODO alterar o construtor para aceitar uma listagem de pct
 	public ConsultaBuilder medico(String crm, String nome) {
 		this.crm = crm;
 		this.nomeMedico = nome;
