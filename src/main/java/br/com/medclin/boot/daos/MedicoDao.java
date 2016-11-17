@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.medclin.boot.models.Medico;
 
-@Repository
+
 public interface MedicoDao extends CrudRepository<Medico, Serializable>{
 
 //Exemplo da documentacao
