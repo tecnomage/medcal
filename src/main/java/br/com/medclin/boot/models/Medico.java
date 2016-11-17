@@ -19,7 +19,6 @@ public class Medico {
 	@NotNull
 	private String crm;
 
-	@NotEmpty
 	private String cpf;
 
 	private String Endereco;

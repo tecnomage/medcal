@@ -1,14 +1,16 @@
 package br.com.medclin.boot.daosTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -20,6 +22,7 @@ import br.com.medclin.boot.models.Medico;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
+@AutoConfigureTestDatabase(replace=Replace.NONE)
 public class MedicoDaoTest {
 
 		
@@ -45,13 +48,14 @@ public class MedicoDaoTest {
 	
 	@Test
 	public void buscaPorCrmMockado() {
+		
 		when(medico.getCpf()).thenReturn("123");
 
-		when(medicoDao.findByCrm(medico.getCpf())).thenReturn(medico);
+		when(repository.findByCrm(medico.getCrm())).thenReturn(medico);
 
 		Medico medicoCrm = new CriadorDeMedico().crm("123").controi();
 
-		assertEquals(medicoCrm.getCrm(), medicoDao.findByCrm("123").getCpf());
+		assertEquals(medicoCrm.getCrm(), repository.findByCrm("123").getCpf());
 	}
 	
 	
