@@ -30,6 +30,7 @@ public class Boot {
 		// SpringApplication.run(Boot.class, args);
 	}
 
+
 //	@Bean
 //	public DataSource dataSource(){
 //		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -54,7 +55,7 @@ public class Boot {
 //         
 //           return factory;
 //    }
-	
+//	
 	
 	@RequestMapping("/")
 	@ResponseBody
