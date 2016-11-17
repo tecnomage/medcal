@@ -2,6 +2,7 @@ package br.com.medclin.boot.daosTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -51,11 +52,15 @@ public class MedicoDaoTest {
 		
 		when(medico.getCpf()).thenReturn("123");
 
-		when(repository.findByCrm(medico.getCrm())).thenReturn(medico);
+		when(repository.findByCrm("123")).thenReturn(medico);
 
 		Medico medicoCrm = new CriadorDeMedico().crm("123").controi();
-
-		assertEquals(medicoCrm.getCrm(), repository.findByCrm("123").getCpf());
+		
+		Medico MedicoTeste = repository.findByCrm("123"); 
+		
+		assertTrue(medicoCrm.equals(MedicoTeste));
+		
+		//assertEquals(medicoCrm , repository.findByCrm("123"));
 	}
 	
 	
@@ -68,7 +73,7 @@ public class MedicoDaoTest {
 		
 		Medico medico2 = new Medico("123");
 		
-		 assertThat(medico.getCrm()).isEqualTo("123");
+		assertThat(medico.getCrm()).isEqualTo("123");
 				
 	}
 	

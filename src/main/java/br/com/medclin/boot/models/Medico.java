@@ -84,9 +84,9 @@ public class Medico {
 		return getCrm() + getNome();
 	}
 
-	@Override
-	public boolean equals(Object med) {
-		if (this.getCpf() == ((Medico) med).getCpf())
+	
+	public boolean equals(Medico med) {
+		if (this.cpf == med.getCrm())
 			return true;
 		else {
 			return false;
