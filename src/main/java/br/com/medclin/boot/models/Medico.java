@@ -14,6 +14,7 @@ public class Medico {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
 	private String nome;
 
 	@NotNull
@@ -21,7 +22,7 @@ public class Medico {
 
 	private String cpf;
 
-	private String Endereco;
+	private String endereco;
 
 	public Medico(String nome, String crm) {
 		this.nome = nome;
@@ -30,6 +31,14 @@ public class Medico {
 
 	public Medico(String crm2) {
 		this.crm = crm2;
+	}
+
+	public Medico(String crm, String nome, String cpf, String endereco) {
+		this.crm = crm;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		
 	}
 
 	public Integer getId() {
@@ -49,7 +58,7 @@ public class Medico {
 	}
 
 	public String getCrm() {
-		return crm;
+		return this.crm;
 	}
 
 	public void setCrm(String crm) {
@@ -57,19 +66,19 @@ public class Medico {
 	}
 
 	public String getCpf() {
-		return cpf;
+		return this.cpf;
 	}
 
 	public void setCpf(String cpf) {
-		cpf = cpf;
+		this.cpf = cpf;
 	}
 
 	public String getEndereco() {
-		return Endereco;
+		return this.endereco;
 	}
 
 	public void setEndereco(String endereco) {
-		Endereco = endereco;
+		this.endereco = endereco;
 	}
 
 	@Override
@@ -81,7 +90,7 @@ public class Medico {
 	@Override
 	public String toString() {
 
-		return getCrm() + getNome();
+		return getCrm() + getNome() + getCpf();
 	}
 
 	

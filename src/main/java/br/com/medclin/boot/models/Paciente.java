@@ -14,13 +14,15 @@ public class Paciente {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String nome;
 	private Calendar dataNascimento;
 	private String endereco;
     
 	@NotNull
 	private String cpf;
-    private String PlanoDeSaude;
+    
+	private String planoDeSaude;
     
     
 	
@@ -30,7 +32,7 @@ public class Paciente {
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
 		this.cpf = cpf;
-		this.PlanoDeSaude = planoDeSaude;
+		this.planoDeSaude = planoDeSaude;
 	}
 
 
@@ -64,49 +66,49 @@ public class Paciente {
 
 
 	public Calendar getDataNascimento() {
-		return dataNascimento;
+		return this.dataNascimento;
 	}
 
 
 
 	public void setDataNascimento(Calendar dataNascimento) {
-		dataNascimento = dataNascimento;
+		this.dataNascimento = dataNascimento;
 	}
 
 
 
 	public String getEndereco() {
-		return endereco;
+		return this.endereco;
 	}
 
 
 
 	public void setEndereco(String endereco) {
-		endereco = endereco;
+		this.endereco = endereco;
 	}
 
 
 
 	public String getCpf() {
-		return cpf;
+		return this.cpf;
 	}
 
 
 
 	public void setCpf(String cpf) {
-		cpf = cpf;
+		this.cpf = cpf;
 	}
 
 
 
 	public String getPlanoDeSaude() {
-		return PlanoDeSaude;
+		return planoDeSaude;
 	}
 
 
 
 	public void setPlanoDeSaude(String planoDeSaude) {
-		PlanoDeSaude = planoDeSaude;
+		this.planoDeSaude = planoDeSaude;
 	}
 
 
