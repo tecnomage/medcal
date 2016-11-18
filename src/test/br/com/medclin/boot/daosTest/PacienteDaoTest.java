@@ -50,9 +50,6 @@ public class PacienteDaoTest {
 		when(pct.getCpf()).thenReturn("123");
 
 		when(pctDao.findByCpf("123")).thenReturn(pct);
-
-		//Paciente pct = new CriadorDePacientes().cpf("123").nome("vini").endereco("rua 10").constroi();
-		
 		
 		Paciente pctRepoMocado = pctDao.findByCpf("123");
 		
