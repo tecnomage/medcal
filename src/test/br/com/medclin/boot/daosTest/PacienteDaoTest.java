@@ -77,8 +77,7 @@ public class PacienteDaoTest {
 	@Test
 	public void BuscaPorCpf() {
 		
-		
-		
+			
 		Paciente paciente = this.repository.findByCpf("123");
 		
 		// Paciente pctAux = new Paciente("123");
