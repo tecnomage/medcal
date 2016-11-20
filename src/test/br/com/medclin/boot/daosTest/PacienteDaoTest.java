@@ -1,15 +1,22 @@
 package br.com.medclin.boot.daosTest;
 
-import static org.assertj.core.api.Assertions.assertThat;
+ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 
 import java.util.Calendar;
 import java.util.List;
 
-import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,14 +50,13 @@ public class PacienteDaoTest {
 	public void prepareMocks() {
 		pct = mock(Paciente.class);
 		pctDao = mock(PacienteDao.class);
-		
+
 		this.entityManager.persist(new Paciente("vinicius", Calendar.getInstance(), "rua 10", "1"));
 		this.entityManager.persist(new Paciente("marcio", Calendar.getInstance(), "rua 10", "2"));
 		this.entityManager.persist(new Paciente("ius", Calendar.getInstance(), "rua 10", "3"));
 		this.entityManager.persist(new Paciente("mariozinho", Calendar.getInstance(), "rua 10", "123"));
 		this.entityManager.persist(new Paciente("marcela", Calendar.getInstance(), "rua 10", "4"));
-		
-		
+
 	}
 
 	@Test
@@ -68,23 +74,23 @@ public class PacienteDaoTest {
 
 	@Test
 	public void BuscaPorNome() {
-		
+
 		Paciente pct = this.repository.findByNome("vinicius");
-		
-		assertEquals("vinicius",pct.getNome());
+
+		assertEquals("vinicius", pct.getNome());
 	}
-	
+
 	@Test
 	public void BuscaPorCpf() {
-		
-			
+
 		Paciente paciente = this.repository.findByCpf("123");
-		
+
 		// Paciente pctAux = new Paciente("123");
-		
+
 		assertThat(paciente.getCpf()).isEqualTo("123");
-		
+
 	}
+
 	
 	@Test
 	public void BuscaTodos() {
@@ -92,17 +98,8 @@ public class PacienteDaoTest {
 
 		List<Paciente> pcts = (List<Paciente>) repository.findAll(); 
 		
-		List<Paciente> pcts2 = (List<Paciente>) repository.findAll();
-		
-		for (Paciente paciente : pcts2) {
-			System.out.println( paciente.getNome());
-		}
-		
-		assertThat(pcts,
-				IsIterableContainingInOrder.contains(pcts2.toArray()));
-		
+		assertThat(pcts, hasSize(5));
+	
+	
 	}
-	
-	
-
 }

@@ -2,11 +2,17 @@ package br.com.medclin.boot.models;
 
 import java.util.Calendar;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.ManyToAny;
 
 
 @Entity
@@ -22,6 +28,8 @@ public class Paciente {
 	@NotNull
 	private String cpf;
     
+	//TODO mapear planos de saúde
+	@OneToMany(mappedBy= "Plano")
 	private String planoDeSaude;
     
     
