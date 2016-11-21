@@ -23,20 +23,19 @@ public class Paciente {
     
 	@NotNull
 	private String cpf;
-    
-	//TODO mapear planos de saúde
+
 	@ManyToOne
-	private Plano plano;
+	private Plano planoDeSaude;
     
     
 	
-    public Paciente(String nome, Calendar dataNascimento, String endereco, String cpf, Plano planoDeSaude) {
+    public Paciente(String nome, Calendar dataNascimento, String endereco, String cpf, Plano plano) {
 		super();
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
 		this.cpf = cpf;
-		this.plano = planoDeSaude;
+		this.planoDeSaude = plano;
 	}
 
 
@@ -106,13 +105,13 @@ public class Paciente {
 
 
 	public Plano getPlano() {
-		return plano;
+		return planoDeSaude;
 	}
 
 
 
 	public void setPlano(Plano plano) {
-		this.plano = plano;
+		this.planoDeSaude = plano;
 	}
 
 	public boolean equals(Paciente pct) {

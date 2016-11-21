@@ -1,6 +1,7 @@
 package br.com.medclin.boot.daos;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -20,5 +21,12 @@ public interface PacienteDao extends CrudRepository<Paciente, Serializable> {
 
 	@Query("select p.endereco from Paciente p where p.endereco = ?1")
 	String findByEndereco(String string);
+
+	@Query("select p.nome from Plano p join fetch p.pacientes")
+	List<Paciente> getNumeroDePctPorPlano();
+	
+//	@Query("select p.nome from Plano p join fetch p.pacientes")
+//	List<Paciente> getNumeroDePctPorPlano();
+	
 	
 }

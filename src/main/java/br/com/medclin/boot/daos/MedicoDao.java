@@ -16,7 +16,6 @@ public interface MedicoDao extends CrudRepository<Medico, Serializable> {
 	// @Query("select u from User u where u.firstname = :firstname")
 	// List<User> findByFirstname(String firstname);
 
-	// Query("from Medico m where m.crm=:crm")
 	Medico findByCrm(String crm);
 
 	Medico findByNome(String nome);

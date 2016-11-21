@@ -25,7 +25,7 @@ public class Boot {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Boot.class, args);
-		System.out.println("ola meus amigos" + ctx.getDisplayName());
+		System.out.println("ola meus amigos" +"\n" + ctx.getDisplayName());
 
 		// SpringApplication.run(Boot.class, args);
 	}
