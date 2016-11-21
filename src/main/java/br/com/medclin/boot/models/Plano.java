@@ -18,7 +18,7 @@ public class Plano {
 	private String nome;
 	
 	
-	@OneToMany(mappedBy= "Paciente")
+	@OneToMany(mappedBy = "plano")
 	private List<Paciente> pcts;
 	
 	

@@ -25,7 +25,6 @@ public class Paciente {
 	private String cpf;
     
 	//TODO mapear planos de saúde
-	
 	@ManyToOne
 	private Plano plano;
     
