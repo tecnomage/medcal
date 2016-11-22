@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,9 +36,9 @@ public class ConsultaTest {
 	public void TodaConsultaDeveTerMedicoEpaciente() {
 
 		Consulta consulta = new ConsultaBuilder().medico("123", "fulano").constroi();
-
+		
 		// return getPct() + medico.toString() + getReceita();
-		//assertThat(consulta.toString(), contains(" vinicius"));
+		assertThat(consulta.getPct(), IsEmptyCollection.emptyCollectionOf(Paciente.class));
 		
 		
 	}

@@ -56,11 +56,4 @@ public class Boot {
 //           return factory;
 //    }
 	
-	
-	@RequestMapping("/")
-	@ResponseBody
-	public String home() {
-		return "index";
-	}
-
 }

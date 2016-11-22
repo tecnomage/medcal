@@ -4,8 +4,6 @@ import br.com.medclin.boot.models.Medico;
 
 public class CriadorDeMedico {
 
-
-
 	private String nome;
 	private String crm;
 
@@ -18,25 +16,22 @@ public class CriadorDeMedico {
 		this.crm = crm;
 		return this;
 	}
-	
-	
-	
-	public Medico controi(){
+
+	public Medico constroi() {
+
+//		if (nome == null) {
+//			return new Medico(crm);
+//		} else if (crm != null)
+//			return new Medico(nome, crm);
+//
 		
-		if (nome == null) {
-			return new Medico(crm);
-		}
-		else return new Medico(nome, crm);
+		return new Medico(nome,crm);
+		
 	}
 
-	
 	@Override
 	public String toString() {
 		return nome + crm;
 	}
-
-
-
-
 
 }

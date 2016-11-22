@@ -58,7 +58,7 @@ public class Medico {
 	}
 
 	public String getCrm() {
-		return this.crm;
+		return crm;
 	}
 
 	public void setCrm(String crm) {
@@ -66,7 +66,7 @@ public class Medico {
 	}
 
 	public String getCpf() {
-		return this.cpf;
+		return cpf;
 	}
 
 	public void setCpf(String cpf) {
@@ -74,7 +74,7 @@ public class Medico {
 	}
 
 	public String getEndereco() {
-		return this.endereco;
+		return endereco;
 	}
 
 	public void setEndereco(String endereco) {
