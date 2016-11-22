@@ -24,7 +24,7 @@ public class Consulta {
 
 	@ManyToMany
 	@JoinTable(name = "CONSULTA_PACIENTES")
-	private List<Paciente> pct = new ArrayList<>();
+	private List<Paciente> pacientes = new ArrayList<>();
 
 	@ManyToMany
 	@JoinTable(name = "CONSULTA_RECEITA")
@@ -32,7 +32,7 @@ public class Consulta {
 
 	public Consulta(Medico med, List<Paciente> paciente) {
 		this.medico = med;
-		this.pct = paciente;
+		this.pacientes = paciente;
 	}
 
 	public Integer getId() {
@@ -44,11 +44,11 @@ public class Consulta {
 	}
 
 	public List<Paciente> getPct() {
-		return pct;
+		return pacientes;
 	}
 
 	public void setPct(List<Paciente> pct) {
-		this.pct = pct;
+		this.pacientes = pct;
 	}
 
 	public Medico getMedico() {
@@ -71,10 +71,7 @@ public class Consulta {
 	@Override
 	public String toString() {
 		
-		//@NOTE a view usará essa lista mostrar as consultas 
-		List<Paciente> pct = getPct();
-		
-		return pct + this.medico.getCrm();
+		return getPct().toString() + this.medico.getCrm();
 		
 		 
 	}

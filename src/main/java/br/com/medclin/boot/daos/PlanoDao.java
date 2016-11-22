@@ -11,11 +11,11 @@ import br.com.medclin.boot.models.Paciente;
 import br.com.medclin.boot.models.Plano;
 
 @Repository
-public interface PlanoDao  extends CrudRepository<Plano , Serializable>{
+public interface PlanoDao extends CrudRepository<Plano , Serializable>{
 
 	
-//	@Query("select p.nome from Plano p join fetch p.pacientes")
-//	List<Paciente> getNumeroDePctPorPlano();
+	@Query("select p from Plano p join fetch p.pacientes")
+	List<Plano> getNumeroDePctPorPlano();			
 	
 	
 	//("select distinct c from Conta c join fetch c.movimentacoes");

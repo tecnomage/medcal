@@ -88,7 +88,6 @@ public class PacienteDaoTest {
 	@Test
 	public void BuscaTodos() {
 		
-
 		List<Paciente> pcts = (List<Paciente>) repository.findAll(); 
 		
 		assertThat(pcts, hasSize(5));
@@ -96,13 +95,5 @@ public class PacienteDaoTest {
 	
 	}
 	
-	
-	public void BuscaPctePorPlano() {
-		
-		List<Paciente> planosPorPcte = this.repository.getNumeroDePctPorPlano();
-		
-		assertThat(planosPorPcte, hasSize(5));
-		
-	}
 	
 }

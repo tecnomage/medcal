@@ -60,9 +60,11 @@ public class PlanoDaoTest {
 	public void pegaNdePctPorPlano() {
 		
 				
-//		List<Paciente> planosPorPcte = this.planoDao.getNumeroDePctPorPlano();
-//		
-//		assertThat(planosPorPcte, hasSize(5));
+		//List<Paciente> planosPorPcte = this.planoDao.getNumeroDePctPorPlano();
+		
+		List<Plano> planosPorPcte = this.planoDao.getNumeroDePctPorPlano();
+		
+		assertThat(planosPorPcte, hasSize(5));
 	}
 
 }

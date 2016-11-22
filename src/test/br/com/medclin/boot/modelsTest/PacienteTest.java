@@ -29,7 +29,7 @@ public class PacienteTest {
 			Paciente pct = new CriadorDePacientes().nome("vincius").cpf("80807747474")
 					.nascimento(Calendar.getInstance()).endereco(null).constroi();
 		} catch (Error e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 

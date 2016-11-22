@@ -103,7 +103,7 @@ public class MedicoDaoTest {
 
 	}
 
-	//TODO usar o isarraywith size?
+	
 	@Test
 	public void buscaTodos() {
 		List<Medico> medicos =  (List<Medico>) repository.findAll();
