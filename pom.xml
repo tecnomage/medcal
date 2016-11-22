@@ -17,13 +17,19 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>1.4.2.RELEASE</version>
 		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-thymeleaf</artifactId> -->
+		<!-- <version>1.4.2.RELEASE</version> -->
+		<!-- </dependency> -->
+		
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<version>1.4.2.RELEASE</version>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf</artifactId>
+			<version>3.0.2.RELEASE</version>
 		</dependency>
 
-		
+
 		<!-- testes -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
