@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
 
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" />
-
+<link th:href="@{css/headerMenu.css}" rel="stylesheet" />
+<script th:src="@{js/menu.js}"></script>
 
 </head>
 
@@ -13,10 +14,14 @@
 <body>
 
 	<section class="container">
-		<h2>Sobre Nós</h2>
-        <img class="img-responsive" th:src="@{img/empresa.jpg}" alt="img error" />
-        
-        
+
+		<div th:replace="includes/header :: menu"></div>
+
+
+		<img class="img-responsive" th:src="@{img/empresa.jpg}"
+			alt="img error" />
+
+
 		<div class="panel-group" id="paineis-sobre">
 			<div class="panel panel-default">
 				<div class="panel-heading" data-toggle="collapse"
@@ -58,7 +63,10 @@
 
 	</section>
 
-	<script	th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+	<script
+		th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
 	<script th:src="@{js/bootstrap.min.js}"></script>
+
+	<div th:replace="includes/header :: copy"></div>
 </body>
 </html>
