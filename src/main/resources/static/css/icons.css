@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'FontePersonalizada';
+  src: url('../');
+  src: url('../fonts/FontePersonalizada?#iefix') format('embedded-opentype'),
+    url('../fonts/FontePersonalizada.svg') format('svg'),
+    url('../fonts/FontePersonalizada.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

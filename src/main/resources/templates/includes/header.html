@@ -3,7 +3,8 @@
 
 <head>
 
-<link th:href="@{css/headerMenu.css}" rel="stylesheet" />
+<link th:href="@{css/headerMenus.css}" rel="stylesheet" />
+<link th:href="@{css/icons.css}" rel="stylesheet" />
 <script th:src="@{js/menu.js}"></script>
 
 </head>
@@ -22,20 +23,26 @@
 				</div>
 				<div class="">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#"> <span class="small-nav"
+						<li class="active"><a href="/home"> <span class="small-nav"
 								data-toggle="tooltip" data-placement="right" title="Home">
 									<span class="glyphicon glyphicon-home"></span>
 							</span> <span class="full-nav"> Home </span>
 						</a></li>
-						<li><a href="#about-us"> <span class="small-nav"
+						<li><a href="/about"> <span class="small-nav"
 								data-toggle="tooltip" data-placement="right" title="About Us">
 									<span class="fa fa-users"></span>
-							</span> <span class="full-nav"> About Us </span>
+							</span> <span class="full-nav"> Sobre nós </span>
 						</a></li>
-						<li><a href="#contact-us"> <span class="small-nav"
+						<li><a href="/medicos"> <span class="small-nav"
+								data-toggle="tooltip" data-placement="right" title="Contact Us">
+							 <span class=""></span>
+							</span> <span class="full-nav"> medicos </span>
+							<!--  <link rel="icon" th:href="@{icons/png/medic.png}" type="image/png"></link>-->
+						</a></li>
+						<li><a href="/contato"> <span class="small-nav"
 								data-toggle="tooltip" data-placement="right" title="Contact Us">
 									<span class="glyphicon glyphicon-comment"></span>
-							</span> <span class="full-nav"> Contact Us </span>
+							</span> <span class="full-nav"> Contate-nos </span>
 						</a></li>
 					</ul>
 				</div>
@@ -50,10 +57,9 @@
 
 		<div class="container">
 			<div class="row">
-				<h2>Bootstrap Navigation meets Twitch Navigation</h2>
-				<p>This is just a quick and dirty example I made to show off to
-					a friend. Don't forget to change the theme using the dropdown
-					above.</p>
+				<h2>ttheme from twitch</h2>
+				<p>This is a quick example you can change later, instead of using this
+				.</p>
 			</div>
 			<div class="row">
 				<h2>Navbar Styles</h2>

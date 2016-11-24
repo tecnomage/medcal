@@ -3,9 +3,14 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link th:href="@{css/bootstrap.min.css}" rel="stylesheet" />
-<link th:href="@{css/headerMenu.css}" rel="stylesheet" />
-<script th:src="@{js/menu.js}"></script>
+<link href="/css/bootstrap.min.css" 
+th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+<link href="/css/headerMenu.css" 
+th:href="@{/css/headerMenu.css}" rel="stylesheet" />
+
+<script src="/js/menu.js" 
+th:src="@{/js/menu.js}"></script>
 
 </head>
 
@@ -18,7 +23,8 @@
 		<div th:replace="includes/header :: menu"></div>
 
 
-		<img class="img-responsive" th:src="@{img/empresa.jpg}"
+		<img class="img-responsive img-rounded" src="/img/empresa.jpg" 
+		th:src="@{/img/empresa.jpg}"
 			alt="img error" />
 
 
@@ -65,7 +71,8 @@
 
 	<script
 		th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
-	<script th:src="@{js/bootstrap.min.js}"></script>
+	<script src="/js/bootstrap.min.js" 
+	th:src="@{/js/bootstrap.min.js}"></script>
 
 	<div th:replace="includes/header :: copy"></div>
 </body>

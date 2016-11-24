@@ -8,9 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 @Configuration
-@ComponentScan(basePackages = {"br.com.medclin.boot.controllers",
-"br.com.medclin.boot.daos", "br.com.medclin.boot.models",
-"br.com.medclin.boot"})
+@ComponentScan(basePackages = {"br.com.medclin.boot"})
 public class Boot {
 
 	public static void main(String[] args) {
