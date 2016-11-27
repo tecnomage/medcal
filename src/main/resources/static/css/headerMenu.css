@@ -148,9 +148,9 @@ body {
 }
 
 .med{ 
-	background-image: url(ambulance.svg);
+	background-image: url("ambulance.svg");
 	background-repeat: none;
-	size: 1cm;
+	size: 4cm;
 }
 /* desse jeito carrega no inspect 
 /* .med{ */ */
