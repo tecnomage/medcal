@@ -148,10 +148,12 @@ body {
 }
 
 .med { 
-	background-image: url(surgeon.svg);
+	background-image: url(/img/medical.svg);
     background-repeat:no-repeat;
     object-fit: contain;
-    width: 100%; 
+    width: 100%;   
+   -webkit-filter: invert(1);
+   filter: invert(1); 
    }
 
 
