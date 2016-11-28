@@ -4,27 +4,21 @@
     <meta charset="UTF-8"/>
 <title>Insert title here</title>
 
-    <link href="/css/headerMenu.css" th:href="@{/css/headerMenu.css}"
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
 	rel="stylesheet" />
+    
+    <link href="/css/headerMenu.css" th:href="@{/css/headerMenu.css}" 
+          rel="stylesheet" />
+    
     </head>
 <body>
-<p>2015  Tribunal Regional do Trabalho da 9a região</p>
-        <p><a class="med" href="medicos.html"></a></p>
-        
- <p class="med">
- testando inserção de imagens normais
- <a href="/home"> <img src="/img/casa.png" th:src="@{/img/casa.png}" alt="img error" /> </a>
+
+<a href="medicos.html"><p>2016  Tribunal Regional do Trabalho da 9a região</p></a>
+                
+ <p class="container">
+  <a class="med" href="/home"> <img src="img/band.png"
+                             th:src="@{img/band.png}" alt="img error"/> </a>
  </p>       
- 
- <p> testando a inserção da ambulancia</p>
- <img src="/img/ambulance.png" th:src="@{/img/ambulance.png}" alt="img error" />
- 
-<p> testando a inserção</p>    
-    
-<img src="/img/casa.png" th:src="@{/img/casa.png}" alt="img error" />
-    
-<img class="img-responsive img-rounded" src="/img/castelo.jpg"
-				th:src="@{/img/castelo.jpg}" alt="img error" />         
-         
+
 </body>
 </html>

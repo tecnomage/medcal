@@ -147,12 +147,22 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.med{ 
-	background-image: url("ambulance.svg");
-	background-repeat: none;
-	size: 4cm;
+.med { 
+	background-image: url(surgeon.svg);
+    background-repeat:no-repeat;
+    object-fit: contain;
+    width: 100%; 
+   }
+
+
+
+.rodape {
+ align-content: center
+
 }
+
 /* desse jeito carrega no inspect 
+	background-image: url("ambulance.svg");
 /* .med{ */ */
 /* 		background-image: url("ambulance.svg"); */
 /* } */

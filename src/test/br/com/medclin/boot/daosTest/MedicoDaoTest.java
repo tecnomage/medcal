@@ -57,9 +57,8 @@ public class MedicoDaoTest {
 
 		when(medicoDaoMock.findByCrm("123")).thenReturn(medico);
 
-		Medico medicoCrm = new CriadorDeMedico().crm("123").controi();
-
-		Medico MedicoTeste = medicoDaoMock.findByCrm("123");
+		Medico medicoCrm = new CriadorDeMedico().crm("123").constroi();
+				Medico MedicoTeste = medicoDaoMock.findByCrm("123");
 
 		assertTrue(medicoCrm.equals(MedicoTeste));
 
