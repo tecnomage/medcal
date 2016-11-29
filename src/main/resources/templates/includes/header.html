@@ -3,14 +3,16 @@
 
 <head>
 
-<link th:href="@{css/headerMenus.css}" rel="stylesheet" />
-<link th:href="@{css/icons.css}" rel="stylesheet" />
-<script src="/js/menu.js" th:src="@{/js/menu.js}"></script>
-<script src="/js/jumbo.js" th:src="@{/js/jumbo.js}"></script>
+<link th:href="@{/css/headerMenus.css}" rel="stylesheet" />
+<link th:href="@{/css/icons.css}" rel="stylesheet" />
 
+<script src="/js/menu.js" th:src="@{js/menu.js}"></script>
+<script src="/js/jumbo.js" th:src="@{js/jumbo.js}"></script>
+    
+    
 </head>
 
-<body onload="jumbo.js">
+<body>
 
 	<div th:fragment="menu">
 
@@ -57,9 +59,9 @@
 		</div>
 	
 		
-            <div class="bg"></div>
+            <div class="bg" onload="parallax();"></div>
 			<div class="jumbotron">
-				<h2 class="lead">MedClin clinics</h2>
+				<h2>MedClin clinics</h2>
 				<p class="lead">Sua clinica integrada</p>
             </div>
             
@@ -68,11 +70,11 @@
 				<p>Just to show off how easy it is to theme!</p>
 				<button type="button"
 					class="btn btn-inverse nav-style-toggle disabled"
-					data-type="inverse">Inverse</button>
+					data-type="inverse" onclick="alerta()">alerte-se</button>
 				<button type="button" class="btn btn-default nav-style-toggle"
 					data-type="default">Default</button>
 				<button type="button" class="btn btn-purple nav-style-toggle"
-					data-type="purple">Purple</button>
+					data-type="purple" onclick="alerta();">alerte-se</button>
 			</div>
 		
 
