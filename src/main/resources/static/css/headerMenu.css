@@ -148,10 +148,10 @@ body {
 }
 
 .med { 
-	background-image: url(/img/medical.svg);
-    background-repeat:no-repeat;
-    object-fit: contain;
-    width: 100%;   
+	background-image: url(ambulance.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: hard-light;
    -webkit-filter: invert(1);
    filter: invert(1); 
    }
