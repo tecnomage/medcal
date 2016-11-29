@@ -5,11 +5,12 @@
 
 <link th:href="@{css/headerMenus.css}" rel="stylesheet" />
 <link th:href="@{css/icons.css}" rel="stylesheet" />
-<script th:src="@{js/menu.js}"></script>
+<script src="/js/menu.js" th:src="@{/js/menu.js}"></script>
+<script src="/js/jumbo.js" th:src="@{/js/jumbo.js}"></script>
 
 </head>
 
-<body>
+<body onload="jumbo.js">
 
 	<div th:fragment="menu">
 
@@ -54,18 +55,14 @@
 				<!--/.nav-collapse -->
 			</div>
 		</div>
-		<button type="button"
-			class="btn btn-default btn-xs navbar-twitch-toggle">
-			<span class="glyphicon glyphicon-chevron-right nav-open"></span> <span
-				class="glyphicon glyphicon-chevron-left nav-close"></span>
-		</button>
-
-		<div class="container">
-			<div class="row">
-				<h2>theme from twitch</h2>
-				<p>This is a quick example you can change later, instead of using this
-				.</p>
-			</div>
+	
+		
+            <div class="bg"></div>
+			<div class="jumbotron">
+				<h2 class="lead">MedClin clinics</h2>
+				<p class="lead">Sua clinica integrada</p>
+            </div>
+            
 			<div class="row">
 				<h2>Navbar Styles</h2>
 				<p>Just to show off how easy it is to theme!</p>
@@ -77,7 +74,7 @@
 				<button type="button" class="btn btn-purple nav-style-toggle"
 					data-type="purple">Purple</button>
 			</div>
-		</div>
+		
 
 
 
@@ -87,7 +84,8 @@
 
 
 	<div th:fragment="footer">
-	<p class="rodape"><img src="/img/logo.jpg" th:src="@{/img/logo.jpg}" alt="error"/></p>
+        
+	<p class="rodape"><img class="img-responsive" src="/img/logo.jpg" th:src="@{/img/logo.jpg}" alt="error"/></p>
         
 	</div>
 

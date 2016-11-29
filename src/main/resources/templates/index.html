@@ -9,8 +9,6 @@
 <link href="/css/headerMenu.css" th:href="@{/css/headerMenu.css}"
     rel="stylesheet" />
 
-<script src="/js/menu.js" th:src="@{/js/menu.js}"></script>
-
 </head>
 
 
@@ -21,8 +19,8 @@
 
         <div th:replace="includes/header :: menu"></div>
         <p>
-            <img class="img-responsive img-rounded" src="/img/castelo.jpg"
-                th:src="@{/img/castelo.jpg}" alt="img error" />
+            <img class="img-responsive img-rounded" src="/img/clinica.jpg"
+                th:src="@{/img/clinica.jpg}" alt="img error" />
         </p>
 
         <div class="panel-group" id="paineis-sobre">
@@ -33,20 +31,19 @@
                 </div>
 
                 <div class="collapse in" id="primeiro-paragrafo">
-                    <div class="panel-body">Desde 1935 trazendo casas, mansões e
-                        prédios lindos para o mundo</div>
+                    <div class="panel-body">Desde 1935 atendendo nossos pacientes com humanidade 
+                        e amor</div>
                 </div>
             </div>
 
-            <div class="panel panel-default">
+            <div class="panel panel-default" onload="jumbo.js">
                 <div class="panel-heading" data-toggle="collapse"
                     data-target="#segundo-paragrafo" data-parent="#paineis-sobre">
-                    <h3 class="panel-title">Preços acessíveis</h3>
+                    <h3 class="panel-title">Equipe profissional</h3>
                 </div>
 
                 <div id="segundo-paragrafo" class="collapse">
-                    <div class="panel-body">Alegria para colaborar com um mundo
-                        mais bonito</div>
+                    <div class="panel-body">uma equipe que trata todos com muito amor e carinho</div>
                 </div>
             </div>
 
@@ -59,7 +56,7 @@
 
                 <div id="terceiro-paragrafo" class="collapse">
                     <div class="panel-body">Trazendo alegria para a vida das
-                        pessoas que tem dinheiro para gastar.</div>
+                        pessoas.</div>
                 </div>
             </div>
         </div>
