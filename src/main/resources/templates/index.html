@@ -17,12 +17,13 @@
 </head>
 
 
-
+<div th:replace="includes/header :: menu"></div>
+    
 <body>
 
     <section class="container">
 
-        <div th:replace="includes/header :: menu"></div>
+        
         <p>
             <img class="img-responsive img-rounded" src="/img/clinica.jpg"
                 th:src="@{/img/clinica.jpg}" alt="img error" />

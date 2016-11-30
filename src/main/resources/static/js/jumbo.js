@@ -4,13 +4,6 @@ function parallax(){
     $('.bg').css('height', (jumboHeight-scrolled) + 'px');
 }
 
-
 $(window).scroll(function(e){
-	 parallax();
+    parallax();
 });
-
-
-function alerta() {
-	alert("Hello! I am an alert box!!");
-	
-}
