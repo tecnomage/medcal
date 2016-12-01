@@ -24,21 +24,21 @@
  <form action="#" th:action="@{salvar}" th:object="${paciente}" method="POST">
   <div class="form-group">
     <label for="nome">Nome</label>
-    <input type="text" class="form-control" id="nome"   placeholder="nome do paciente" th:value="*{nome}"/>
+    <input type="text" class="form-control" id="nome"   placeholder="nome do nte" th:value="*{nome}"/>
   </div>
   <div class="form-group">
     <label for="cpf">CPF</label>
-    <input type="text"  th:field="*{cpf}" class="form-control" id="cpf"  placeholder="endereço"/>
+    <input type="text" class="form-control" id="cpf"  placeholder="endereço" th:value="*{cpf}"/>
   </div>
   
   <div class="form-group">
     <label for="dataNascimento">Data de Nascimento</label>
-    <input type="text"  th:field="*{dataNascimento}" class="form-control" id="dataNascimento"  placeholder="Data de Nascimento"/>
+    <input type="text" class="form-control" id="dataNascimento"  placeholder="Data de Nascimento" th:value="${paciente.dataNascimento}" />
   </div>
   
   <div class="form-group">
     <label for="endereco">Endereço</label>
-    <input type="text"  th:field="*{endereco}" class="form-control" id="endereco"  placeholder="endereço"/>
+    <input type="text" class="form-control" id="endereco"  placeholder="endereço" th:value="${paciente.endereco}"/>
   </div>
   
   <div class="checkbox">
