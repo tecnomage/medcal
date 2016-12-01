@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
+    rel="stylesheet" />
+    
+<script src="/js/menu.js" th:src="@{/js/menu.js}"></script>
+<script src="/js/jumbo.js" th:src="@{/js/jumbo.js}"></script>
+ 
+<link href="/css/lista.css" th:href="@{/css/lista.css}"
+    rel="stylesheet" /> 
+    
+<link href="/css/headerMenu.css" th:href="@{/css/headerMenu.css}"
+    rel="stylesheet" />
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+            th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+
+</head>
+
+
+<div class="container" th:replace="includes/header :: menu"></div>
+    
+<body>
+
+   <div class="lista container">
+   <ul  th:each="paciente : ${pacientes}">
+  <li class="list-group-item">
+    <span th:text="${paciente.cpf}">Cpf</span>
+    <span th:text="${paciente.nome}">nome</span>
+    <button class="badge" onclick="window.location.href='/med'">Continue</button>
+    <button type="submit" class="badge">Info</button>
+  </li>
+</ul>
+    
+  </div>
+  
+  <div th:fragment="footer">
+
+		<p class="rodape">
+			<img class="img-responsive" src="/img/logo.jpg"
+				th:src="@{/img/logo.jpg}" alt="error" />
+		</p>
+
+	</div>
+
+</body>
+</html>  

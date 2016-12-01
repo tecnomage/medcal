@@ -107,7 +107,7 @@ public class Paciente {
 
 	@Override
 	public String toString() {
-		return getCpf() + getNome();
+		return getCpf() + getNome() + getDataNascimento() + getEndereco();
 	}
 
 }

@@ -1,5 +1,8 @@
 package br.com.medclin.boot.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,16 +34,25 @@ public class PacienteController {
 	
 	//TODO fazer o tymeleaf date formate antes de salvar.
 	@RequestMapping(value="/salvar" , method = RequestMethod.POST)
-	public ModelAndView salvar(@ModelAttribute Paciente paciente){
+	public String salvar(@ModelAttribute Paciente paciente){
 		
-		System.out.println(paciente.toString()); 
+		//TODO alterar para caso de erro no salvamento, nao vá para listagem
 		pacientedao.save(paciente);
-		ModelAndView modelAndView = new ModelAndView("/listar");
+
+		return "redirect:/listar";
 		
+		
+	}
+
+	@RequestMapping("/listar")
+	public ModelAndView listar() {
+		
+		ModelAndView modelAndView = new ModelAndView("listarPaciente");
+		List<Paciente> pct = (ArrayList<Paciente>) pacientedao.findAll();
+		
+		modelAndView.addObject("pacientes", pct);
 		
 		return modelAndView;
-		
-		
 	}
 	
 	

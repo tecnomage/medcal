@@ -4,56 +4,63 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
-    rel="stylesheet" />
+	rel="stylesheet" />
 <script src="/js/menu.js" th:src="@{/js/menu.js}"></script>
 <script src="/js/jumbo.js" th:src="@{/js/jumbo.js}"></script>
-    
+
 <link href="/css/headerMenu.css" th:href="@{/css/headerMenu.css}"
-    rel="stylesheet" />
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
-            th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+	rel="stylesheet" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+	th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
 
 </head>
-    
+
 
 <body>
-<div th:replace="includes/header :: menu"></div>
-<div class="container">
+	<div th:replace="includes/header :: menu"></div>
+	<div class="container">
 
- <form action="#" th:action="@{salvar}" th:object="${paciente}" method="POST">
-  <div class="form-group">
-    <label for="nome">Nome</label>
-    <input type="text" class="form-control" id="nome"   placeholder="nome do nte" th:value="*{nome}"/>
-  </div>
-  <div class="form-group">
-    <label for="cpf">CPF</label>
-    <input type="text" class="form-control" id="cpf"  placeholder="endereço" th:value="*{cpf}"/>
-  </div>
-  
-  <div class="form-group">
-    <label for="dataNascimento">Data de Nascimento</label>
-    <input type="text" class="form-control" id="dataNascimento"  placeholder="Data de Nascimento" th:value="${paciente.dataNascimento}" />
-  </div>
-  
-  <div class="form-group">
-    <label for="endereco">Endereço</label>
-    <input type="text" class="form-control" id="endereco"  placeholder="endereço" th:value="${paciente.endereco}"/>
-  </div>
-  
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"/> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-</div>
+		<form action="#" th:action="@{salvar}" th:object="${paciente}"
+			method="POST">
+			<div class="form-group">
+				<label for="nome">Nome</label> <input type="text"
+					class="form-control" id="nome" placeholder="nome do Paciente"
+					th:field="*{nome}" />
+			</div>
+			<div class="form-group">
+				<label for="cpf">CPF</label> <input type="text" class="form-control"
+					id="cpf" placeholder="cpf" th:field="*{cpf}" />
+			</div>
 
-    <div th:fragment="footer">
-        
-	<p class="rodape"><img class="img-responsive" src="/img/logo.jpg" th:src="@{/img/logo.jpg}" alt="error"/></p>
-        
+			<div class="form-group">
+				<label for="dataNascimento">Data de Nascimento</label> <input
+					type="text" class="form-control" id="dataNascimento"
+					placeholder="Data de Nascimento" th:value="*{dataNascimento}" />
+			</div>
+
+			<div class="form-group">
+				<label for="endereco">Endereço</label> <input type="text"
+					class="form-control" id="endereco" placeholder="endereço"
+					th:field="*{endereco}" />
+			</div>
+
+			<div class="checkbox">
+				<label> <input type="checkbox" /> Check me out
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+
+	<div th:fragment="footer">
+
+		<p class="rodape">
+			<img class="img-responsive" src="/img/logo.jpg"
+				th:src="@{/img/logo.jpg}" alt="error" />
+		</p>
+
 	</div>
 
 </body>
