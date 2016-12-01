@@ -4,29 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.medclin.boot.daos.PacienteDao;
+import br.com.medclin.boot.daos.MedicoDao;
+import br.com.medclin.boot.models.Medico;
 import br.com.medclin.boot.models.Paciente;
 
-@Controller
-@RequestMapping("medclin/paciente")
-public class PacienteController {
-
+@RequestMapping("/medico")
+public class MedicoController {
+	
 	
 	@Autowired
-	PacienteDao pacientedao;
-	
-	
+	MedicoDao medicodao;
+
 	@RequestMapping("/cadastro")
 	public ModelAndView Cadastro() {
 	
 	ModelAndView modelAndView = new ModelAndView("cadastro");	
-		modelAndView.addObject("paciente", new Paciente() );
+		
+		modelAndView.addObject("medico", new Medico());
+		
 		return modelAndView;
 		
 	}
@@ -34,10 +34,10 @@ public class PacienteController {
 	
 	//TODO fazer o tymeleaf date formate antes de salvar.
 	@RequestMapping(value="/salvar" , method = RequestMethod.POST)
-	public String salvar(@ModelAttribute Paciente paciente){
+	public String salvar(@ModelAttribute Medico medico){
 		
 		//TODO alterar para caso de erro no salvamento, nao vá para listagem
-		pacientedao.save(paciente);
+		medicodao.save(medico);
 
 		return "redirect:/listar";
 		
@@ -47,15 +47,13 @@ public class PacienteController {
 	@RequestMapping("/listar")
 	public ModelAndView listar() {
 		
-		ModelAndView modelAndView = new ModelAndView("paciente/listarPaciente");
-		List<Paciente> pct = (ArrayList<Paciente>) pacientedao.findAll();
+		ModelAndView modelAndView = new ModelAndView("listarmedicos");
+		List<Medico> medicos = (ArrayList<Medico>) medicodao.findAll();
 		
-		modelAndView.addObject("pacientes", pct);
+		modelAndView.addObject("medicos", medicos);
 		
 		return modelAndView;
-	}
+	} 
 	
 	
-		
 }
-
