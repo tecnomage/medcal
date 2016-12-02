@@ -43,7 +43,7 @@ public class ConsultaTest {
 		
 	}
 
-	// FIXME not work
+
 	@Test
 	public void TestaTostring() {
 		Consulta consulta = new ConsultaBuilder().medico("123", "fulano").pacientes((ArrayList<Paciente>) pacientes)

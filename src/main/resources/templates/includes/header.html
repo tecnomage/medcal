@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
 
@@ -23,7 +24,7 @@
 				<div class="">
 					<ul class="nav navbar-nav">
 						
-                        <li class="active"><a href="medclin/home"> <span class="small-nav"
+                        <li class="active"><a href="/medclin/home"> <span class="small-nav"
 								data-toggle="tooltip" data-placement="right" title="Home">
 									<span class="glyphicon glyphicon-home"></span>
 							</span> <span class="full-nav"> Home </span>
@@ -34,17 +35,17 @@
 									<span class="fa fa-users"></span>
 							</span> <span class="full-nav"> Sobre nós </span>
 						</a></li>
-						<li><a href="paciente/cadastro"> <span class="small-nav"
+						<li><a href="/medclin/paciente/cadastro"> <span class="small-nav"
 								data-toggle="tooltip" data-placement="right" title="pacientes">
 									<span class="fa fa-users"></span>
 							</span> <span class="full-nav"> cadastro  de pacientes </span>
 						</a></li>
-                        <li><a href="/consultas"> <span class="small-nav"
+                        <li><a href="medclin/consultas"> <span class="small-nav"
 								data-toggle="tooltip" data-placement="right" title="About Us">
 									<span class="glyphicon glyphicon-heart-empty"></span>
 							</span> <span class="full-nav"> Consultas </span>
 						</a></li>
-						<li><a class="med " href="medico/listar"> 
+						<li><a class="med " href="/medclin/medico/listar"> 
                             <span class="small-nav"	data-toggle="tooltip" data-placement="right" title="Medicos">
 							</span> <span class="full-nav"> Médicos </span>
 						</a></li>

@@ -19,10 +19,10 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("/teste")
+	@RequestMapping("/login")
 	public ModelAndView test(){
 		
-		ModelAndView mv = new ModelAndView("teste");
+		ModelAndView mv = new ModelAndView("generics/login");
 				
 		return mv;
 		
