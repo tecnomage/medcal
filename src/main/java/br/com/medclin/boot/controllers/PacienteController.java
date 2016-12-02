@@ -25,7 +25,7 @@ public class PacienteController {
 	@RequestMapping("/cadastro")
 	public ModelAndView Cadastro() {
 	
-	ModelAndView modelAndView = new ModelAndView("cadastro");	
+	ModelAndView modelAndView = new ModelAndView("paciente/cadastro");	
 		modelAndView.addObject("paciente", new Paciente() );
 		return modelAndView;
 		
@@ -39,7 +39,7 @@ public class PacienteController {
 		//TODO alterar para caso de erro no salvamento, nao vá para listagem
 		pacientedao.save(paciente);
 
-		return "redirect:/listar";
+		return "redirect:listar";
 		
 		
 	}
@@ -47,7 +47,8 @@ public class PacienteController {
 	@RequestMapping("/listar")
 	public ModelAndView listar() {
 		
-		ModelAndView modelAndView = new ModelAndView("paciente/listarPaciente");
+		//TODO alinhar para a listagem ficar centralizada.
+		ModelAndView modelAndView = new ModelAndView("paciente/listar");
 		List<Paciente> pct = (ArrayList<Paciente>) pacientedao.findAll();
 		
 		modelAndView.addObject("pacientes", pct);

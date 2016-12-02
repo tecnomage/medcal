@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,9 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.medclin.boot.daos.MedicoDao;
 import br.com.medclin.boot.models.Medico;
-import br.com.medclin.boot.models.Paciente;
 
-@RequestMapping("/medico")
+@Controller
+@RequestMapping("medclin/medico")
 public class MedicoController {
 	
 	
@@ -23,7 +24,7 @@ public class MedicoController {
 	@RequestMapping("/cadastro")
 	public ModelAndView Cadastro() {
 	
-	ModelAndView modelAndView = new ModelAndView("cadastro");	
+	ModelAndView modelAndView = new ModelAndView("medico/cadastro");	
 		
 		modelAndView.addObject("medico", new Medico());
 		
@@ -47,7 +48,7 @@ public class MedicoController {
 	@RequestMapping("/listar")
 	public ModelAndView listar() {
 		
-		ModelAndView modelAndView = new ModelAndView("listarmedicos");
+		ModelAndView modelAndView = new ModelAndView("medico/listar");
 		List<Medico> medicos = (ArrayList<Medico>) medicodao.findAll();
 		
 		modelAndView.addObject("medicos", medicos);
