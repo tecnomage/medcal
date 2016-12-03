@@ -13,8 +13,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("css/**", "templates/**").permitAll().antMatchers("/user/**")
-				.hasRole("USER").and().formLogin().loginPage("medclin/login").failureUrl("/login-error");
+		http.authorizeRequests()
+		.antMatchers("css/**", "/medclin/home","/").permitAll()
+		.anyRequest().authenticated().and()
+		.formLogin().loginPage("medclin/login").failureUrl("/error");
 	}
 
 	@Autowired
