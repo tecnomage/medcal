@@ -1,34 +1,26 @@
 package br.com.medclin.boot.daos;
 
-import java.util.List;
+import java.io.Serializable;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class UsuarioDao  implements UserDetailsService {
+import br.com.medclin.boot.models.User;
 
-	@PersistenceContext
-	private EntityManager manager;
-	
-	
-	
-	public UserDetails loadUserByUsername(String user){
-		
-		List<String> usuarios = manager.createQuery("select * From user u")			
-			.getResultList();
-		
-		if(usuarios.isEmpty()){
-			throw new UsernameNotFoundException("Usuario"+"nao foi encontrado");
-		}
-		
-		return usuarios.get(0);
-					
-	}
+@Repository
+public interface UsuarioDao extends CrudRepository<User , Serializable>{
+
+@Query("select u From User u"+ " where u.nome = :nome")
+public User loadUserByUsername(String nome);
 
 }
+		
+				
+		
+
+
+	
+	
+
+
