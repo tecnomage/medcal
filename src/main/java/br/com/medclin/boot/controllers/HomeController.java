@@ -23,7 +23,7 @@ public class HomeController {
 	@RequestMapping("/login")
 	public ModelAndView test(){
 		
-		ModelAndView mv = new ModelAndView("login/login");
+		ModelAndView mv = new ModelAndView("login");
 				
 		return mv;
 		
