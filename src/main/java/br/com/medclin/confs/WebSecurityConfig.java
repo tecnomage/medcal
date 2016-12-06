@@ -13,7 +13,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/medclin/home").permitAll()
+                .antMatchers("/medclin/**").denyAll()
+                .antMatchers("/medclin/pacientes").denyAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
