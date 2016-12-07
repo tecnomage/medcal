@@ -67,13 +67,24 @@ public class Consulta {
 		this.receita = receita;
 	}
 
- 
 	@Override
-	public String toString() {
-		
-		return getPct().toString() + this.medico.getCrm();
-		
-		 
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((medico == null) ? 0 : medico.hashCode());
+		result = prime * result + ((pacientes == null) ? 0 : pacientes.hashCode());
+		result = prime * result + ((receita == null) ? 0 : receita.hashCode());
+		return result;
 	}
 
+	public boolean equals(Consulta cons) {
+		if (this.id == cons.getId())
+			return true;
+		else
+		return false;
+	}
+
+ 
+	
 }
