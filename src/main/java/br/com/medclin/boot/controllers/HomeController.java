@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/medclin")
 public class HomeController {
 
-	@PreAuthorize("permiteAll")
+	
 	@RequestMapping("/home")
 	public ModelAndView home(){
 		

@@ -8,14 +8,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
-@Configuration
-@ComponentScan(basePackages = {"br.com.medclin.boot",
-		"br.com.medclin.boot.builders",
-		"br.com.medclin.boot.controllers",
-		"br.com.medclin.boot.daos",
-		"br.com.medclin.boot.models",
-		"br.com.medclin.boot.confs"
-		})
+//@ComponentScan(basePackages = {"br.com.medclin.boot",
+//		"br.com.medclin.boot.builders",
+//		"br.com.medclin.boot.controllers",
+//		"br.com.medclin.boot.daos",
+//		"br.com.medclin.boot.models",
+//		"br.com.medclin.boot.confs"
+//		})
 
 public class Boot {
 
