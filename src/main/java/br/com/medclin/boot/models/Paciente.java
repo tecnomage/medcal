@@ -83,12 +83,20 @@ public class Paciente {
 		this.cpf = cpf;
 	}
 
-	public Plano getPlano() {
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Plano getPlanoDeSaude() {
 		return planoDeSaude;
 	}
 
-	public void setPlano(Plano plano) {
-		this.planoDeSaude = plano;
+	public void setPlanoDeSaude(Plano planoDeSaude) {
+		this.planoDeSaude = planoDeSaude;
 	}
 
 	public boolean equals(Paciente pct) {

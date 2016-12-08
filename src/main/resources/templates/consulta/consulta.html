@@ -29,26 +29,47 @@
 	<div th:replace="includes/header :: menu"></div>
 	<div class="container">
 
-		<form action="#" th:action="@{salvar}"
-			method="POST">
-			<div class="form-group">
-				<select >
+<form action="#" th:action="@{salvar}"
+			method="POST">       
+
+            <div id="select-medicos" >
+                <!--colocar as label na mesma row-->
+                <div class="form-inline">
+                <label id="medico-label" for="select-medico-consulta" class="control-label col-md-3"> Medico </label>
+                <label id="paciente-label" for="select-paciente-consulta" class="control-label col-md-3"> Paciente </label>    
+                </div>
+                <div class="form-inline">
+				    <select id="select-medico-consulta" class="form-control col-md-3" >
 					<option th:each="medico : ${medicos}" th:value="${medico.id}"
 						th:text="${medico.nome}"></option>
 				</select>
+                    
+                <select id="select-paciente-consulta" class="form-control col-md-3" >
+					<option th:each="paciente : ${pacientes}" th:value="${paciente.id}"
+						th:text="${paciente.nome}"></option>
+				</select>
+            </div>        
 			</div>
-			
-<!-- 			<div class="form-group"> -->
-<!-- 				<label for="crm">CRM</label> <input type="text" class="form-control" -->
-<!-- 					id="crm" placeholder="crm" th:field="*{crm}" /> -->
-<!-- 			</div> -->
-
-			<div class="checkbox">
-
-			</div>
-			<button type="submit" class="btn btn-default">Cadastrar</button>
+			<div class="form-group">
+			<textarea class="form-control col-md-4" rows="2"></textarea>
+            </div>
+    
+            <div class="checkbox">
+            <label> <input type="checkbox" /> Internação
+				</label>
+            </div>
+            
+     
+    <button type="submit" class="btn btn-default">Cadastrar</button>
 		</form>
-	</div>
+    </div>    
+            
+  
+          
+            
+			
+      
+	
 
 	<div th:fragment="footer">
 
