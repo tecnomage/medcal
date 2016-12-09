@@ -210,25 +210,30 @@ section {
 }
 
 #medico-label{
-text-align: center;    
+
     
 }
 
 #select-medicos{
-    padding-top: 30px;
-    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    align-content: center;
+    shape-inside: auto;
 }
 
 #select-paciente-consulta{
-    text-align: center;
+
 }
 
 #paciente-label{
-    text-align: center
+
 }
 
-#internacao-div{
-   
+#consulta{
+   padding-top: 40px; 
+}
+.texto-internacao{
+     padding-top: 40px;
 }
 
 /* desse jeito carrega no inspect 
