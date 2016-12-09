@@ -28,51 +28,56 @@
 <body>
 	<div th:replace="includes/header :: menu"></div>
 	<div class="container">
-        <form class="form-group" action="#" th:action="@{salvar}"
-			method="POST">       
 
-               <div class="form-group">
-                <label id="medico-label" for="select-medico-consulta" class="control-label col-md-3"> Medico </label>
-                  <select id="select-medico-consulta" class="form-control col-md-3" >
+		<form class="form-group" action="#" th:action="@{salvar}"
+			method="POST">
+
+			<div class="form-group">
+				<label id="medico-label" for="select-medico-consulta"
+					class="control-label col-md-3"> Medico </label> <select
+					id="select-medico-consulta" class="form-control col-md-3">
 					<option th:each="medico : ${medicos}" th:value="${medico.id}"
 						th:text="${medico.nome}"></option>
 				</select>
-                </div>
-                <div class="form-group">
-				<label id="paciente-label" for="select-paciente-consulta" class="control-label col-md-3"> Paciente </label>    
-                <select id="select-paciente-consulta" class="form-control col-md-3">
+			</div>
+
+			<div class="form-group">
+				<label id="paciente-label" for="select-paciente-consulta"
+					class="control-label col-md-3"> Paciente </label> <select
+					id="select-paciente-consulta" class="form-control col-md-3">
 					<option th:each="paciente : ${pacientes}" th:value="${paciente.id}"
 						th:text="${paciente.nome}"></option>
 				</select>
-            </div>        
-			
-			
-            
-			<textarea  class="form-control col-md-3"
-            placeholder="Consulta médica">
+			</div>
+
+
+
+			<div class="form-group">
+				<textarea id="texto-consulta" class="form-control col-md-3"
+					placeholder="Consulta médica">
           </textarea>
-        
-            
-    <div class="form-group">
-            <div class="checkbox">
-            <label> <input type="checkbox" /> Internação
-				</label>
-            </div>
-            
-            </div>
-    
-            
-     
-    <button type="submit" class="btn btn-default">Cadastrar</button>
+			</div>
+
+			<div class="form-group">
+				<div class="checkbox">
+					<label> <input type="checkbox" /> Internação
+					</label>
+				</div>
+			</div>
+
+
+
+
+			<button type="submit" class="btn btn-default">Cadastrar</button>
 		</form>
-    </div>    
-            
-  
-          
-            
-			
-      
-	
+	</div>
+
+
+
+
+
+
+
 
 	<div th:fragment="footer">
 

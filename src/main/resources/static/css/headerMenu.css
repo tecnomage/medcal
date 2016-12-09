@@ -204,37 +204,12 @@ section {
 }
 
 #consulta {
-    padding: 50px;
+    margin-top: 50px;
+    align-items: center;
     align-content: center;
-    text-align: center;
-}
-
-#medico-label{
-
     
-}
+    }
 
-#select-medicos{
-    padding-top: 40px;
-    padding-bottom: 40px;
-    align-content: center;
-    shape-inside: auto;
-}
-
-#select-paciente-consulta{
-
-}
-
-#paciente-label{
-
-}
-
-#consulta{
-   padding-top: 40px; 
-}
-.texto-internacao{
-     padding-top: 40px;
-}
 
 /* desse jeito carrega no inspect 
 	background-image: url("ambulance.svg");

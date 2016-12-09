@@ -35,6 +35,10 @@ public class Consulta {
 		this.pacientes = paciente;
 	}
 
+	public Consulta() {
+
+	}
+
 	public Integer getId() {
 		return id;
 	}
