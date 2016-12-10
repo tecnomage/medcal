@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<script src="/js/menu.js" th:src="@{/js/menu.js}"></script>
+<script src="/js/jumbo.js" th:src="@{/js/jumbo.js}"></script>
+
+<link href="/css/headerMenu.css" th:href="@{/css/headerMenu.css}"
+	rel="stylesheet" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+	th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"></script>
+
+</head>
+
+<!-- <div class="form-group blu-margin"> -->
+<!--     <select class="form-control" th:field="${operator.opeId}"  id="dropOperator"> -->
+<!--     <option value="0" th:text="select operator" ></option> -->
+<!--     <option th:each="operator : ${operators}" th:value="${operator.id}"
+		 th:text="${operator.operatorName}"></option> -->
+<!--     </select> -->
+<!-- </div> -->
+
+<body>
+	<div th:replace="includes/header :: menu"></div>
+	<div class="container">
+
+		<form class="form-group" action="#" th:action="@{salvar}"
+			method="POST">
+
+			<div class="form-group">
+				<label id="medico-label" for="select-medico-consulta"
+					class="control-label col-md-3"> Medico </label> <select
+					id="select-medico-consulta" class="form-control col-md-3">
+					<option th:each="medico : ${medicos}" th:value="${medico.id}"
+						th:text="${medico.nome}"></option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label id="paciente-label" for="select-paciente-consulta"
+					class="control-label col-md-3"> Paciente </label> <select
+					id="select-paciente-consulta" class="form-control col-md-3">
+					<option th:each="paciente : ${pacientes}" th:value="${paciente.id}"
+						th:text="${paciente.nome}"></option>
+				</select>
+			</div>
+
+
+
+			<div class="form-group">
+				<textarea id="texto-consulta" class="form-control col-md-3"
+					placeholder="Consulta médica">
+          </textarea>
+			</div>
+
+			<div class="form-group">
+				<div class="checkbox">
+					<label> <input type="checkbox" /> Internação
+					</label>
+				</div>
+			</div>
+
+
+
+
+			<button type="submit" class="btn btn-default">Cadastrar</button>
+		</form>
+	</div>
+
+
+
+
+
+
+
+
+	<div th:fragment="footer">
+
+		<p class="rodape">
+			<img class="img-responsive" src="/img/logo.jpg"
+				th:src="@{/img/logo.jpg}" alt="error" />
+		</p>
+
+	</div>
+
+</body>
+</html>

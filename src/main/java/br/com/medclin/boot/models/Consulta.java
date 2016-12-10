@@ -26,6 +26,7 @@ public class Consulta {
 	@JoinTable(name = "CONSULTA_PACIENTES")
 	private List<Paciente> pacientes = new ArrayList<>();
 
+
 	@ManyToMany
 	@JoinTable(name = "CONSULTA_RECEITA")
 	private List<Receita> receita = new ArrayList<>();
@@ -37,6 +38,10 @@ public class Consulta {
 
 	public Consulta() {
 
+	}
+
+	public Consulta(Medico medico2) {
+		this.medico = medico2;
 	}
 
 	public Integer getId() {
@@ -80,6 +85,12 @@ public class Consulta {
 		result = prime * result + ((pacientes == null) ? 0 : pacientes.hashCode());
 		result = prime * result + ((receita == null) ? 0 : receita.hashCode());
 		return result;
+	}
+		
+//TODO corrigir esse erro
+	@Override
+	public String toString() {
+		return  this.medico.toString();
 	}
 
 	public boolean equals(Consulta cons) {

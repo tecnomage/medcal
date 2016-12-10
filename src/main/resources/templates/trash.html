@@ -114,3 +114,10 @@
 //  left:0;
 //  z-index: -1;
 //
+
+//trash da pagina de consulta
+<select th:field="*{type}">
+  <option th:each="type : ${allTypes}" 
+          th:value="${type}" 
+          th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>
+</select>

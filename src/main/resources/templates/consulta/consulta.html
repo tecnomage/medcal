@@ -17,69 +17,43 @@
 
 </head>
 
-<!-- <div class="form-group blu-margin"> -->
-<!--     <select class="form-control" th:field="${operator.opeId}"  id="dropOperator"> -->
-<!--     <option value="0" th:text="select operator" ></option> -->
-<!--     <option th:each="operator : ${operators}" th:value="${operator.id}"
-		 th:text="${operator.operatorName}"></option> -->
-<!--     </select> -->
-<!-- </div> -->
-
 <body>
 	<div th:replace="includes/header :: menu"></div>
-	<div class="container">
-
-		<form class="form-group" action="#" th:action="@{salvar}"
-			method="POST">
-
-			<div class="form-group">
-				<label id="medico-label" for="select-medico-consulta"
-					class="control-label col-md-3"> Medico </label> <select
-					id="select-medico-consulta" class="form-control col-md-3">
-					<option th:each="medico : ${medicos}" th:value="${medico.id}"
+	<div id="consu" class="container">
+	
+	<form action="#" th:action="@{salvar}" th:object="${consulta}" method="POST">
+    <div class="form-inline">
+    <label for="select-medico-consulta" class="form-group">Medico</label>
+        <select	th:field="*{medico}" id="select-medico-consulta" >
+			<div>
+            <option th:each="medico : ${medicos}" th:value="${medico}"
 						th:text="${medico.nome}"></option>
-				</select>
-			</div>
+            </div>		    
+        </select>
+		
+		<div class="form-group">
+		 <label id="paciente-label" for="select-paciente-consulta" > Paciente</label>
+		</div>						
+        </div>
 
-			<div class="form-group">
-				<label id="paciente-label" for="select-paciente-consulta"
-					class="control-label col-md-3"> Paciente </label> <select
-					id="select-paciente-consulta" class="form-control col-md-3">
-					<option th:each="paciente : ${pacientes}" th:value="${paciente.id}"
-						th:text="${paciente.nome}"></option>
-				</select>
-			</div>
+   <div class="form-group">
+  <label for="comment">Consulta</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div> 
 
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"/> Internado 
+    </label>
+  </div>
 
+        
+  <button type="submit" class="btn btn-default">Salvar</button>
+</form>
+</div>    
+    
 
-			<div class="form-group">
-				<textarea id="texto-consulta" class="form-control col-md-3"
-					placeholder="Consulta médica">
-          </textarea>
-			</div>
-
-			<div class="form-group">
-				<div class="checkbox">
-					<label> <input type="checkbox" /> Internação
-					</label>
-				</div>
-			</div>
-
-
-
-
-			<button type="submit" class="btn btn-default">Cadastrar</button>
-		</form>
-	</div>
-
-
-
-
-
-
-
-
-	<div th:fragment="footer">
+<div th:fragment="footer">
 
 		<p class="rodape">
 			<img class="img-responsive" src="/img/logo.jpg"
@@ -87,6 +61,5 @@
 		</p>
 
 	</div>
-
 </body>
 </html>

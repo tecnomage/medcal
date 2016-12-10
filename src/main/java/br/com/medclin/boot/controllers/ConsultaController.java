@@ -21,7 +21,7 @@ import br.com.medclin.boot.models.Paciente;
 public class ConsultaController {
 
 	@Autowired
-	private ConsultaDao consultaDao;
+	private ConsultaDao consultadao;
 
 	@Autowired
 	private MedicoDao medicoDao;
@@ -29,6 +29,8 @@ public class ConsultaController {
 	@Autowired
 	private PacienteDao pacienteDao;
 
+
+	
 	@RequestMapping("/consulta")
 	public ModelAndView Consulta() {
 
@@ -40,24 +42,10 @@ public class ConsultaController {
 
 		modelAndView.addObject("medicos", medicos);
 		modelAndView.addObject("pacientes", pacientes);
-		
-		return modelAndView;
-	}
-	
-	
-	@RequestMapping("/consulta2")
-	public ModelAndView Consulto() {
 
-		ModelAndView modelAndView = new ModelAndView("consulta/consulta2");
-
-		ArrayList<Medico> medicos = (ArrayList<Medico>) medicoDao.findAll();
-
-		ArrayList<Paciente> pacientes = (ArrayList<Paciente>) pacienteDao.findAll();
-
-		modelAndView.addObject("medicos", medicos);
-		modelAndView.addObject("pacientes", pacientes);
-		
+				
 		modelAndView.addObject("consulta", new Consulta());
+		
 		
 		return modelAndView;
 	}
@@ -67,9 +55,10 @@ public class ConsultaController {
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
 	public String salvar(@ModelAttribute Consulta consulta) {
 		
-		consultaDao.save(consulta);
+				
+		consultadao.save(consulta);
 		
-		return "forward:/medclin/home";
+		return "redirect:medclin/home";
 	}
 
 }
