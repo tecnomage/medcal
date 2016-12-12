@@ -24,15 +24,24 @@
 	<form action="#" th:action="@{salvar}" th:object="${consulta}" method="POST">
     <div class="form-inline">
     <label for="select-medico-consulta" class="form-group">Medico</label>
-        <select	th:field="*{medico}" id="select-medico-consulta" >
+        <select	th:field="*{medico.id}" id="select-medico-consulta" >
 			<div>
-            <option th:each="medico : ${medicos}" th:value="${medico}"
-						th:text="${medico.nome}"></option>
+            <option th:each="medicoEntry : ${medicos}" 
+            		th:value="${medicoEntry.id}"
+						th:text="${medicoEntry.nome}"></option>
             </div>		    
         </select>
 		
 		<div class="form-group">
-		 <label id="paciente-label" for="select-paciente-consulta" > Paciente</label>
+		 <label id="paciente-label" for="select-paciente" > Paciente</label>
+		 <select th:field="*{pacientes}" id="select-paciente" size="5" multiple="multiple"  >
+			<div>
+            <option th:each="pacienteEntry : ${listaPacientes}"
+            			th:field="*{pacientes}"
+						th:value="${pacienteEntry.id}"
+						th:text="${pacienteEntry.nome}"></option>
+            </div>		    
+        </select>
 		</div>						
         </div>
 

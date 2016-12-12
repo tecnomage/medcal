@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import br.com.medclin.boot.models.Medico;
 
 @Repository
-public interface MedicoDao extends CrudRepository<Medico, Serializable> {
+public interface MedicoDao extends CrudRepository<Medico, Integer> {
 
 	// Exemplo da documentacao
 	// @Query("select u from User u where u.firstname = :firstname")

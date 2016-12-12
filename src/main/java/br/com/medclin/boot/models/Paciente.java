@@ -100,7 +100,7 @@ public class Paciente {
 	}
 
 	public boolean equals(Paciente pct) {
-		if (this.cpf == pct.cpf)
+		if (this.id == pct.id)
 			return true;
 		else
 			return false;
@@ -114,7 +114,9 @@ public class Paciente {
 
 	@Override
 	public String toString() {
-		return getCpf() + getNome() + getDataNascimento() + getEndereco();
+		return "Paciente [id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco
+				+ ", cpf=" + cpf + ", planoDeSaude=" + planoDeSaude + "]";
 	}
 
+	
 }

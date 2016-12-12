@@ -52,20 +52,21 @@ public class Consulta {
 		this.id = id;
 	}
 
-	public List<Paciente> getPct() {
-		return pacientes;
-	}
-
-	public void setPct(List<Paciente> pct) {
-		this.pacientes = pct;
-	}
-
+	
 	public Medico getMedico() {
 		return medico;
 	}
 
 	public void setMedico(Medico medico) {
 		this.medico = medico;
+	}
+
+	public List<Paciente> getPacientes() {
+		return pacientes;
+	}
+
+	public void setPacientes(List<Paciente> pacientes) {
+		this.pacientes = pacientes;
 	}
 
 	public List<Receita> getReceita() {
@@ -87,10 +88,9 @@ public class Consulta {
 		return result;
 	}
 		
-//TODO corrigir esse erro
 	@Override
 	public String toString() {
-		return  this.medico.toString();
+		return "Consulta [id=" + id + ", medico=" + medico + ", pacientes=" + pacientes + ", receita=" + receita + "]";
 	}
 
 	public boolean equals(Consulta cons) {

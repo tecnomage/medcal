@@ -41,7 +41,7 @@ public class ConsultaController {
 		ArrayList<Paciente> pacientes = (ArrayList<Paciente>) pacienteDao.findAll();
 
 		modelAndView.addObject("medicos", medicos);
-		modelAndView.addObject("pacientes", pacientes);
+		modelAndView.addObject("listaPacientes", pacientes);
 
 				
 		modelAndView.addObject("consulta", new Consulta());
