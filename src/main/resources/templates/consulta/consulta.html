@@ -34,12 +34,13 @@
 		
 		<div class="form-group">
 		 <label id="paciente-label" for="select-paciente" > Paciente</label>
-		 <select th:field="*{pacientes}" id="select-paciente" size="5" multiple="multiple"  >
+		 <select th:field="*{pacientes}" id="select-paciente" size="5" multiple="multiple">
 			<div>
             <option th:each="pacienteEntry : ${listaPacientes}"
             			th:field="*{pacientes}"
-						th:value="${pacienteEntry.id}"
-						th:text="${pacienteEntry.nome}"></option>
+						th:value="${{pacienteEntry.id}}"
+						th:text="${pacienteEntry.nome}"
+						></option>
             </div>		    
         </select>
 		</div>						
