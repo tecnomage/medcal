@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import br.com.medclin.boot.converters.LookupConverter;
 
 @Configuration
-@EnableWebMvc
 @ComponentScan("br.com.medclin.boot")
 public class configs extends WebMvcConfigurerAdapter{
 

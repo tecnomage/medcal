@@ -14,7 +14,8 @@ public class PacienteFormatter implements Formatter<Paciente> {
 
 	@Override
 	public String print(Paciente paciente, Locale locale) {
-		return paciente.getId();
+		
+		return paciente.getIdString();
 	}
 
 	
@@ -22,7 +23,8 @@ public class PacienteFormatter implements Formatter<Paciente> {
 	@Override
 	public Paciente parse(String id, Locale locale) throws ParseException {
 		Paciente paciente = new Paciente();
-		paciente.setId(id);
+		paciente.setIdString(id);
 		return paciente;
 		
 	}
+}

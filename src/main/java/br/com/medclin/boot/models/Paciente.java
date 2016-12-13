@@ -48,7 +48,7 @@ public class Paciente {
 	}
 
 	public Paciente() {
-		
+
 	}
 
 	public String getNome() {
@@ -83,8 +83,17 @@ public class Paciente {
 		this.cpf = cpf;
 	}
 
+	public String getIdString() {
+		return id.toString();
+	}
+
 	public Integer getId() {
 		return id;
+	}
+
+	public void setIdString(String id) {
+		Integer chave = Integer.valueOf(id);
+		this.id= chave;
 	}
 
 	public void setId(Integer id) {
@@ -118,5 +127,4 @@ public class Paciente {
 				+ ", cpf=" + cpf + ", planoDeSaude=" + planoDeSaude + "]";
 	}
 
-	
 }
