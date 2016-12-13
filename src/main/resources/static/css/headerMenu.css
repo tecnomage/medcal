@@ -209,6 +209,17 @@ section {
     align-content: center;
     
     }
+    
+.flex-row {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+  }    
+    
+/* #bloco-botao-med { */
+/* 	text-align: center; */
+	
+/* }     */
 
 
 /* desse jeito carrega no inspect 

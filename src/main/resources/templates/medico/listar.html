@@ -30,12 +30,15 @@
   <li class="list-group-item">
     <span th:text="${medico.crm}">CRM</span>
     <span th:text="${medico.nome}">nome</span>
-    <button class="badge" onclick="window.location.href='/med'">Continue</button>
-    <button type="submit" class="badge">Info</button>
-  </li>
+    <button class="badge" onclick="window.location.href='/medclin/home'">Continue</button>
+   </li>
 </ul>
-    
   </div>
+  <div id="bloco-botao-med" class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-default" onclick="window.location.href='/medclin/medico/cadastro'" >Cadastrar</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div>    
   
   <div th:fragment="footer">
 

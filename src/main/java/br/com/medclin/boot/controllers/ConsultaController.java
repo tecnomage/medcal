@@ -58,7 +58,8 @@ public class ConsultaController {
 				
 		consultadao.save(consulta);
 		
-		return "redirect:medclin/home";
+		return "redirect:/medclin/consulta";
+		
 	}
 
 }
